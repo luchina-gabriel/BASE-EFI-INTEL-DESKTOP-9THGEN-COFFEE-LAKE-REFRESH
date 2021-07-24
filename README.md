@@ -86,7 +86,7 @@ SSDT-RHUB|[Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universa
 Open the CMD in the directory where the *ACPI Tools* was extracted. (*Command Prompt*) in **Administrator Mode**:
 ```
 path/to/acpidump.exe -b -n DSDT -z
-mv dsdt.dat DSDT.aml
+move dsdt.dat DSDT.aml
 ```
 
 Decompile DSDT.aml:
