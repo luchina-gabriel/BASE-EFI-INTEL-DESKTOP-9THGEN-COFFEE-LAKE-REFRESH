@@ -10,10 +10,10 @@ Initial macOS Support|macOS 10.13, High Sierra.
 # Basic Steps
 
 1. [Download](https://github.com/luchina-gabriel/BASE-EFI-INTEL-DESKTOP-9THGEN-COFFEE-LAKE-REFRESH/releases) the latest release;
-2. Includes additional kexts (for ethernet, audio, etc);
-3. Include the necessary ACPI patches (.aml);
+2. Includes **additional** kexts (for ethernet, audio, etc);
+3. Include the **necessary** ACPI patches (.aml);
 4. Review the special notes;
-5. Generate and complete your SMBIOS infos;
+5. Generate and complete your SMBIOS infos - **ALWAYS**;
 6. Adjust your BIOS;
 7. Install macOS and enjoy :)
 
@@ -51,6 +51,7 @@ Kext|Description
 [AtherosE2200Ethernet.kext](https://github.com/Mieze/AtherosE2200Ethernet/releases)|Required for Atheros and Killer NICs.<br>**Note**: Atheros Killer E2500 models are actually Realtek based, for these systems please use RealtekRTL8111 instead.
 [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases)|For Realtek's Gigabit Ethernet.<br>Sometimes the latest version of the kext might not work properly with your Ethernet. If you see this issue, try older versions.
 [LucyRTL8125Ethernet.kext](https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/)|For Realtek's 2.5Gb Ethernet.
+[SmallTreeIntel82576.kext](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases)| Required for I211 NICs, based off of the SmallTree kext but patched to support I211.<br>Required for most AMD boards running Intel NICs.
 
 ### WiFi and Bluetooth
 Kext|Description
@@ -77,8 +78,9 @@ SSDT-EC-USBX|[Manual](https://dortania.github.io/Getting-Started-With-ACPI/Unive
 SSDT-AWAC\*|[Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/manual.html) \| [Prebuilt](https://github.com/dortania/Getting-Started-With-ACPI/raw/master/extra-files/compiled/SSDT-AWAC.aml) \| [Details](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac.html)
 SSDT-RTC0-RANGE-HEDT\*|[Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/manual.html) \| [Prebuilt](https://github.com/dortania/Getting-Started-With-ACPI/raw/master/extra-files/compiled/SSDT-RTC0-RANGE-HEDT.aml) \| [Details](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac.html)
 SSDT-RHUB|[Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub-methods/manual.html) \| [Prebuilt](https://github.com/dortania/Getting-Started-With-ACPI/raw/master/extra-files/compiled/SSDT-RHUB.aml) \| [Details](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub.html)
+SSDT-PMC|[Manual](https://dortania.github.io/Getting-Started-With-ACPI/Universal/nvram-methods/manual.html) \| [Prebuilt](https://github.com/dortania/Getting-Started-With-ACPI/raw/master/extra-files/compiled/SSDT-PMC.aml) \| [Details](https://dortania.github.io/Getting-Started-With-ACPI/Universal/nvram.html)
 
-**Note:** If you choose *Prebuilt* of SSDT-AWAC or SSDT-RTC0-RANGE-HEDT, use only one at time, NOT BOTH as the same time.
+**Note:** If you choose *Prebuilt* of SSDT-AWAC or SSDT-RTC0-RANGE-HEDT, use only one at time, NOT BOTH as the same time. **Tests are necessary!**
 
 ### Dumping your DSDT in Windows Environment
 [Download iASL Compiler ACPI Tools](https://acpica.org/downloads/binary-tools)
